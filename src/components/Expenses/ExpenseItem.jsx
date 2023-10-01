@@ -3,12 +3,13 @@ import Card from "../UI/Card";
 import "./ExpenseItem.css";
 
 const ExpenseItem = (props) => {
+  const { title, date, amount } = props;
   return (
     <Card className="expense-item">
-      <ExpenseDate date={props.date} />
+      <ExpenseDate date={date} />
       <div className="expense-item__description">
-        <h2>{props.title}</h2>
-        <div className="expense-item__price">${props.amount}</div>
+        <h2>{title}</h2>
+        <div className="expense-item__price">${amount}</div>
       </div>
     </Card>
   );
