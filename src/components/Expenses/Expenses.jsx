@@ -4,17 +4,10 @@ import "./Expenses.css";
 
 const Expenses = (props) => {
   const { expenses } = props;
-  let itemList = [];
-  expenses.forEach((element) => {
-    itemList.push(
-      <ExpenseItem
-        title={element.title}
-        amount={element.amount}
-        date={element.date}
-      />
-    );
-  });
-  return <Card className="expenses">{itemList}</Card>;
+  const items = expenses.map((d) => (
+    <ExpenseItem title={d.title} amount={d.amount} date={d.date} />
+  ));
+  return <Card className="expenses">{items}</Card>;
 };
 
 export default Expenses;
